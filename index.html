@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniHub — учебные материалы и дедлайны</title>
+<meta name="description" content="UniHub собирает учебные материалы и домашние задания в одном приложении для Android. Работает без интернета, без регистрации и без рекламы.">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preload" href="fonts/inter-display-700.woff" as="font" type="font/woff" crossorigin>
+<meta property="og:title" content="UniHub — учебные материалы и дедлайны">
+<meta property="og:description" content="Материалы, домашние задания и напоминания в одном приложении. Без интернета и без аккаунтов.">
+<meta property="og:image" content="img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><img src="img/icon.png" width="40" height="40" alt="">UniHub</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#features">Возможности</a>
+      <a href="#screens">Экраны</a>
+      <a href="#privacy">Данные</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Учёба лежит по папкам, а не по чатам</h1>
+        <p>UniHub собирает материалы и домашние задания в одном приложении для Android. Работает без интернета, без регистрации и без рекламы.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="https://github.com/Foysh/unihub/releases/latest">Скачать APK</a>
+          <!-- Когда приложение появится в RuStore, добавь сюда вторую кнопку:
+               <a class="btn btn-quiet" href="ССЫЛКА_RUSTORE">Открыть в RuStore</a> -->
+          <a class="btn btn-quiet" href="https://github.com/Foysh/unihub">Исходный код</a>
+        </div>
+        <p class="fine">Нужен Android 7.0 или новее. Версия 1.0.0.</p>
+      </div>
+
+      <div class="stage" aria-hidden="false">
+        <div class="tab tab-1">Математика</div>
+        <div class="tab tab-2">Физика</div>
+        <div class="tab tab-3">Право</div>
+        <div class="phone">
+          <img src="img/hero-main.jpg" width="540" height="1145" alt="Главный экран UniHub: список предметов и прогресс домашних заданий">
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="features">
+      <div class="split">
+        <div class="sticky">
+          <h2>Всё нужное на своих местах</h2>
+          <p class="lead">Предметы, папки, файлы и сроки сдачи не теряются между мессенджерами, галереей и заметками.</p>
+        </div>
+        <ul class="feat">
+          <li style="--c:var(--tab-lav)"><i></i><div><h3>Предметы и папки</h3><p>Раскладывайте материалы по предметам и вложенным папкам: лекции отдельно, практики отдельно.</p></div></li>
+          <li style="--c:var(--tab-sand)"><i></i><div><h3>Ссылки, файлы, фото и видео</h3><p>Добавляйте всё, что нужно для учёбы, и открывайте прямо из приложения.</p></div></li>
+          <li style="--c:var(--tab-sage)"><i></i><div><h3>Домашние задания</h3><p>Срок, приоритет и статус для каждого задания. Смотрите списком или в календаре.</p></div></li>
+          <li style="--c:var(--tab-clay)"><i></i><div><h3>Напоминания о дедлайнах</h3><p>За час до срока приходит уведомление. Выключается в настройках.</p></div></li>
+          <li style="--c:var(--tab-lilac)"><i></i><div><h3>Поиск и избранное</h3><p>Находите материалы и задания за секунду, а самое нужное закрепляйте вверху.</p></div></li>
+          <li style="--c:var(--tab-lav)"><i></i><div><h3>Корзина и резервная копия</h3><p>Удалённое можно вернуть. Все данные собираются в один ZIP-файл и переезжают на новый телефон.</p></div></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<section class="block" id="screens" style="padding-top:24px">
+  <div class="wrap shots-head">
+    <h2>Так выглядит приложение</h2>
+    <p class="lead" style="margin:0">Светлая и тёмная темы, акцентный цвет на ваш вкус, удобно и на телефоне, и на планшете.</p>
+  </div>
+  <div class="shots" tabindex="0" aria-label="Скриншоты приложения">
+    <figure><img src="img/phone_1_main.jpg" width="540" height="960" loading="lazy" alt="Главный экран с предметами и прогрессом заданий"></figure>
+    <figure><img src="img/phone_4_add.jpg" width="540" height="960" loading="lazy" alt="Меню добавления ссылки, файла, фото или видео"></figure>
+    <figure><img src="img/phone_2_folders.jpg" width="540" height="960" loading="lazy" alt="Папки внутри предмета"></figure>
+    <figure><img src="img/tablet_3_materials.jpg" width="540" height="960" loading="lazy" alt="Лента материалов на планшете"></figure>
+  </div>
+</section>
+
+<section class="band" id="privacy">
+  <div class="wrap split">
+    <div>
+      <h2>Данные остаются на вашем телефоне</h2>
+      <p class="lead">UniHub ничего никуда не отправляет. Подробности — в <a href="privacy.html">политике конфиденциальности</a>.</p>
+    </div>
+    <ul class="facts">
+      <li><strong>Без интернета</strong><span>У приложения нет доступа к сети, поэтому данные физически некуда уходить.</span></li>
+      <li><strong>Без аккаунтов и рекламы</strong><span>Чтобы начать, ничего вводить не нужно. Аналитики и трекеров нет.</span></li>
+      <li><strong>Только ваши файлы</strong><span>Приложение читает те файлы, фото и видео, которые вы сами выбрали, и копирует их к себе.</span></li>
+    </ul>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="block" id="faq">
+    <h2>Вопросы и ответы</h2>
+    <div class="faq" style="margin-top:32px">
+      <details><summary>Нужен ли интернет?</summary><p>Нет. Всё работает без сети. Интернет понадобится только браузеру, когда вы откроете сохранённую ссылку.</p></details>
+      <details><summary>Как перенести данные на новый телефон?</summary><p>Откройте «Настройки», раздел «Данные», и нажмите «Создать резервную копию». Отправьте файл себе в облако или мессенджер. На новом телефоне установите UniHub, выберите «Восстановить из копии» и укажите этот файл.</p></details>
+      <details><summary>Что будет, если удалить приложение?</summary><p>Вместе с приложением удалятся все материалы и задания. Перед удалением сделайте резервную копию.</p></details>
+      <details><summary>Почему приложению нужен доступ к файлам, фото и видео?</summary><p>Чтобы вы могли добавлять их в материалы. Приложение читает только то, что вы выбрали сами, и никуда это не передаёт.</p></details>
+      <details><summary>Куда написать, если нашёл ошибку?</summary><p>Создайте обращение на <a href="https://github.com/Foysh/unihub/issues">странице проекта на GitHub</a>: опишите, что произошло, и на каком телефоне.</p></details>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>UniHub 1.0.0</span>
+    <nav aria-label="Ссылки">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="https://github.com/Foysh/unihub">GitHub</a>
+      <a href="https://github.com/Foysh/unihub/releases">Все версии</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
