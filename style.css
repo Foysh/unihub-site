@@ -1,0 +1,169 @@
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/inter-400.woff") format("woff")}
+@font-face{font-family:"Inter";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/inter-600.woff") format("woff")}
+@font-face{font-family:"Inter Display";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/inter-display-700.woff") format("woff")}
+
+:root{
+  --paper:#f5f2ec;
+  --surface:#fffefc;
+  --ink:#141d32;
+  --ink-soft:#4d5468;
+  --plum:#7e64a8;
+  --plum-ink:#5e4787;
+  --line:#e4ded2;
+  --tab-lav:#d9ddf0;
+  --tab-sand:#f0dfb9;
+  --tab-sage:#d8e5d6;
+  --tab-clay:#ead3c8;
+  --tab-lilac:#e8d9ed;
+  --band:#141d32;
+  --band-ink:#f1f0ea;
+  --band-soft:#b7bccb;
+  --shadow:0 30px 60px -28px rgba(30,20,60,.45);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#171916;
+    --surface:#22251f;
+    --ink:#f1f0ea;
+    --ink-soft:#b3b6a8;
+    --plum:#b7a2d6;
+    --plum-ink:#d3c4ea;
+    --line:#34372f;
+    --tab-lav:#3a3f5c;
+    --tab-sand:#5a4d2c;
+    --tab-sage:#3a4a3b;
+    --tab-clay:#5a3f36;
+    --tab-lilac:#4a3a55;
+    --band:#0f1210;
+    --band-ink:#f1f0ea;
+    --band-soft:#a4a99a;
+    --shadow:0 30px 60px -28px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+
+*{box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 1.0625rem/1.62 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--plum-ink);text-underline-offset:.2em}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+h1,h2,h3{font-family:"Inter Display","Inter",system-ui,sans-serif;font-weight:700;margin:0;color:var(--ink)}
+h1{font-size:clamp(2.7rem,6.2vw,4.7rem);line-height:1.01;letter-spacing:-.035em}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.08;letter-spacing:-.028em}
+h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.012em}
+p{margin:0}
+
+/* шапка */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.brand{display:flex;align-items:center;gap:12px;font:700 1.25rem/1 "Inter Display","Inter",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:11px}
+.nav{display:flex;gap:6px}
+.nav a{padding:9px 14px;border-radius:999px;color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.95rem}
+.nav a:hover{background:var(--surface);color:var(--ink)}
+
+/* первый экран */
+.hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:40px;padding:36px 0 96px}
+.hero-copy{max-width:34rem}
+.hero-copy p{margin-top:24px;font-size:1.2rem;line-height:1.55;color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:16px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent}
+.btn-main{background:var(--ink);color:var(--paper)}
+.btn-main:hover{background:var(--plum-ink);color:#fff}
+.btn-quiet{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-quiet:hover{border-color:var(--ink);color:var(--ink)}
+.fine{margin-top:18px;font-size:.92rem;color:var(--ink-soft)}
+
+/* веер закладок за телефоном — главный выразительный элемент */
+.stage{position:relative;justify-self:center;width:min(330px,78vw);margin-block:24px}
+.phone{position:relative;z-index:3;border:9px solid #181a22;border-radius:42px;overflow:hidden;background:#181a22;box-shadow:var(--shadow)}
+.tab{position:absolute;z-index:1;width:80%;aspect-ratio:3/4;border-radius:22px 22px 18px 18px;
+  display:flex;align-items:flex-start;padding:15px 20px;
+  font:700 1.05rem/1 "Inter Display","Inter",sans-serif;letter-spacing:-.01em;color:var(--ink);
+  transform-origin:50% 100%;animation:fan 1s cubic-bezier(.2,.8,.2,1) .25s both}
+.tab::before{content:"";position:absolute;left:0;top:-14px;width:46%;height:20px;border-radius:12px 12px 0 0;background:inherit}
+.tab-1{background:var(--tab-lav);top:-30px;left:-20%;--r:-9deg}
+.tab-2{background:var(--tab-sand);top:-52px;left:10%;--r:2deg;z-index:0}
+.tab-3{background:var(--tab-sage);top:-26px;left:40%;--r:11deg}
+.tab-2{animation-delay:.38s}
+.tab-3{animation-delay:.5s}
+@keyframes fan{from{transform:rotate(0) translateY(26px);opacity:0}to{transform:rotate(var(--r)) translateY(0);opacity:1}}
+.tab{transform:rotate(var(--r))}
+
+/* блоки */
+.block{padding:96px 0}
+.split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.lead{margin-top:20px;color:var(--ink-soft);max-width:26rem}
+.sticky{position:sticky;top:32px}
+
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:34px}
+.feat li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:20px;align-items:start}
+.feat i{display:block;width:44px;height:36px;margin-top:3px;border-radius:12px 12px 8px 8px;position:relative;background:var(--c)}
+.feat i::before{content:"";position:absolute;left:0;top:-6px;width:20px;height:10px;border-radius:6px 6px 0 0;background:var(--c)}
+.feat p{margin-top:6px;color:var(--ink-soft);max-width:34rem}
+
+/* экраны */
+.shots-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px}
+.shots{display:flex;gap:22px;overflow-x:auto;padding:6px max(20px,(100vw - 1120px)/2) 36px;scroll-snap-type:x proximity;scrollbar-width:thin}
+.shots figure{margin:0;flex:0 0 auto;scroll-snap-align:center}
+.shots img{height:min(560px,68vh);width:auto;border-radius:26px;box-shadow:var(--shadow)}
+
+/* конфиденциальность */
+.band{background:var(--band);color:var(--band-ink);padding:92px 0}
+.band h2{color:var(--band-ink);max-width:22rem}
+.band .lead{color:var(--band-soft)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+.facts strong{display:block;font:700 1.35rem/1.2 "Inter Display","Inter",sans-serif;letter-spacing:-.015em;color:var(--band-ink)}
+.facts span{display:block;margin-top:6px;color:var(--band-soft);max-width:30rem}
+.band a{color:#d3c4ea;font-weight:600}
+.band a:hover{color:#fff}
+
+/* вопросы */
+.faq{max-width:46rem}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:700 1.2rem/1.3 "Inter Display","Inter",sans-serif;letter-spacing:-.012em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:1.6rem;line-height:1;color:var(--plum)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:12px;color:var(--ink-soft)}
+
+footer{padding:40px 0 56px;color:var(--ink-soft);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+
+/* политика */
+.doc{max-width:44rem;padding:24px 0 96px}
+.doc h1{font-size:clamp(2.1rem,5vw,3rem)}
+.doc h2{font-size:1.5rem;margin-top:44px;letter-spacing:-.02em}
+.doc p,.doc li{margin-top:12px}
+.doc ul{padding-left:1.2rem;margin:0}
+.doc .date{margin-top:14px;color:var(--ink-soft)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:56px;padding-bottom:72px}
+  .split{grid-template-columns:1fr;gap:40px}
+  .sticky{position:static}
+  .block,.band{padding:68px 0}
+  .nav a:nth-child(n+3){display:none}
+  .stage{width:min(300px,72vw);margin-inline:auto}
+  .tab{width:72%}
+  .tab-1{left:-12%}.tab-3{left:26%}
+  .shots-head{flex-direction:column;align-items:start}
+}
+@media (max-width:480px){
+  .btn{width:100%;justify-content:center}
+  .tab{font-size:.9rem;padding:12px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .tab{animation:none}
+}
